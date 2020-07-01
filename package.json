@@ -1,23 +1,28 @@
 {
-  "name": "inner",
+  "name": "myapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^4.2.1",
+    "@ant-design/icons": "^4.0.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "antd": "^4.3.5",
+    "antd": "^4.1.0",
     "axios": "^0.19.2",
     "chart.js": "^1.1.1",
     "copy-to-clipboard": "^3.3.1",
     "history": "^4.10.1",
-    "http-proxy-middleware": "^1.0.4",
+    "http-proxy-middleware": "^1.0.3",
     "prop-types": "^15.7.2",
     "qs": "^6.9.4",
     "react": "^16.13.1",
+    "react-chartjs": "^1.2.0",
+    "react-cookies": "^0.1.1",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.13.1",
+    "react-intl-universal": "^2.2.5",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "reconnecting-websocket": "^4.4.0",
     "redux": "^4.0.5",
@@ -45,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1"
   }
 }

@@ -9,22 +9,4 @@ module.exports = function(app) {
             changeOrigin: true,
         })
     );
-    app.use(
-        createProxyMiddleware("/pool/", {
-            target: url,
-            changeOrigin: true,
-        })
-    );
-    app.use(
-        createProxyMiddleware("/warning/", {
-            target: url,
-            changeOrigin: true,
-        })
-    );
-    app.use(
-        createProxyMiddleware("/workorder/", {
-            target: url,
-            changeOrigin: true,
-        })
-    );
 };

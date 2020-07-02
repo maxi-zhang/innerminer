@@ -1,4 +1,6 @@
 @import "config";
+@import "rewrite";
+@import "common";
 
 @mixin width-auto() {
   width: 100%;

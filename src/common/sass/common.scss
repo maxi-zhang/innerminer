@@ -1,5 +1,10 @@
 @import "config";
 
-.common-table-bg {
-  @include display-flex;
+.login-area{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 183px;
+  height: auto;
+  transform: translate(-50%,-50%);
 }

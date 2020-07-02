@@ -1,13 +1,13 @@
 @import "config";
 
-@mixin po-center{
+@mixin po-center {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
-.banner{
+.banner {
   width: $textWidth;
   height: 80px;
   border: 1px solid #f0f0f0;
@@ -15,20 +15,24 @@
   position: relative;
   background-color: $backDivColor;
   border-radius: 10px;
-  h1{
+
+  h1 {
     position: absolute;
     top: 15px;
     left: 20px;
   }
-  .list{
+
+  .list {
     position: absolute;
     width: 700px;
     height: 100%;
     left: 420px;
-    ul{
+
+    ul {
       padding: 0;
     }
-    li{
+
+    li {
       display: block;
       width: 50px;
       height: 78px;
@@ -38,33 +42,71 @@
       margin-right: 30px;
       cursor: pointer;
     }
-    li:hover{
+
+    li:hover {
       background-color: #e7e7e7;
     }
   }
 }
 
-.login-area{
+.login-area {
   @include po-center;
   width: 183px;
   height: auto;
 }
 
-.main-text{
+.main-text {
   width: $textWidth;
   height: auto;
   margin: 30px auto 0;
   background-color: $backDivColor;
 }
 
-.common-div{
+.common-div {
   padding: 10px;
   border-radius: 10px;
   background-color: $backDivColor;
 }
 
+.pool-menu {
+  width: 200px;
+  float: left;
+  li {
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border: 1px solid #b7b7b7;
+    line-height: 50px;
+  }
+}
 
+.pool-right{
+  width: 950px;
+  float: right;
+}
 
+.title-common{
+  width: 100%;
+  height: 50px;
+  border: 1px solid #b7b7b7;
+  line-height: 50px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.piece{
+  height: 130px;
+  width: 230px;
+  border: 1px solid #b7b7b7;
+  float: left;
+  margin-right: 30px;
+  margin-top: 10px;
+  padding-left: 30px;
+  p{
+    line-height: 40px;
+  }
+}
 
 
 

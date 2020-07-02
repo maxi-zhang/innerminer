@@ -1,9 +1,12 @@
 import React, {Component} from "react";
+import Banner from "../common/Banner";
 
 export default class Index extends Component {
     render() {
         return (
-            "this is index"
+            <React.Fragment>
+                <Banner/>
+            </React.Fragment>
         )
     }
 }

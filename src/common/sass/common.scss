@@ -1,10 +1,49 @@
 @import "config";
 
-.login-area{
+@mixin po-center{
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.banner{
+  width: $textWidth;
+  height: 80px;
+  border: 1px solid #f0f0f0;
+  margin: 0 auto;
+  position: relative;
+  background-color: #F7F7F7;
+  h1{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+  .list{
+    position: absolute;
+    width: 700px;
+    height: 100%;
+    left: 420px;
+    ul{
+      padding: 0;
+    }
+    li{
+      display: block;
+      width: 50px;
+      height: 78px;
+      float: left;
+      line-height: 78px;
+      text-align: center;
+      margin-right: 30px;
+      cursor: pointer;
+    }
+    li:hover{
+      background-color: #e7e7e7;
+    }
+  }
+}
+
+.login-area{
   width: 183px;
   height: auto;
-  transform: translate(-50%,-50%);
 }

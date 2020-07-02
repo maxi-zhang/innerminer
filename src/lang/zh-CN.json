@@ -1,5 +1,12 @@
 {
   "USER_NAME": "用户名",
   "PASSWORD": "密码",
-  "CONFIRM": "确定"
+  "CONFIRM": "确定",
+
+  "MENU_INDEX": "首页",
+  "MENU_POOL": "矿池",
+  "MENU_UPDATE": "升级",
+  "MENU_BILL": "工单",
+
+  "SYSTEM_NAME": "矿池运维管理系统（内部）"
 }

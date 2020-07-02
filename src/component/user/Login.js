@@ -3,7 +3,6 @@ import {Input, Space, Button} from 'antd';
 import {EyeInvisibleOutlined, EyeTwoTone} from '@ant-design/icons';
 import intl from "react-intl-universal";
 
-
 export default class Index extends Component {
     render() {
         return (

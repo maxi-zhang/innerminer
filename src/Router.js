@@ -4,6 +4,7 @@ import intl from 'react-intl-universal';
 
 import LoginIndex from "./component/user/Login";
 import IndexIndex from "./component/index/Index";
+import PoolIndex from  "./component/pool/Index";
 
 const locales = {
     "en-US": require('./lang/en-US'),
@@ -43,6 +44,7 @@ export default class Basic extends Component {
                     <Switch>
                         <Route path="/userweb/login" component={LoginIndex}/>
                         <Route path="/index/index" component={IndexIndex}/>
+                        <Route path="/poolweb/index" component={PoolIndex}/>
                         <Route path="/" component={LoginIndex}/>
                     </Switch>
                 </Router>

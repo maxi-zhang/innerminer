@@ -40,7 +40,7 @@ class WarningArea extends Component{
 class IndexMain extends Component{
     render() {
         return (
-            <div className={"main-text"}>
+            <div className={"main-text common-div"}>
                 <BillArea/>
                 <WarningArea/>
             </div>

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import intl from "react-intl-universal";
 import Banner from "../common/Banner";
-import {Button, Select, Input, Table} from 'antd';
+import {Button, Select, Input, Table, Checkbox} from 'antd';
 
 const {Search} = Input;
 
@@ -53,7 +53,6 @@ class AboveInfo extends Component {
     }
 }
 
-
 class ChangePanel extends Component {
     render() {
         return (
@@ -104,10 +103,35 @@ const PPP = () =>{
 // 矿池表格区域整体
 class TableDetail extends Component {
     state = {
-        choose:3
+        choose:3,
+        checkedList: [],
+        indeterminate: true,
+        checkAll: false,
+        plainOptions:['1', '2', '3','4', '5', '6','7', '8', '9','10', '11', '12'],
+    };
+
+    onChange = checkedList => {
+        this.setState({
+            checkedList,
+            indeterminate: !!checkedList.length && checkedList.length < this.state.plainOptions.length,
+            checkAll: checkedList.length === this.state.plainOptions.length,
+        });
+    };
+
+    about = () =>{
+        console.log(this.state.checkedList);
     }
+
+    onCheckAllChange = e => {
+        this.setState({
+            checkedList: e.target.checked ? this.state.plainOptions : [],
+            indeterminate: false,
+            checkAll: e.target.checked,
+        });
+    };
     render() {
         const columns = [
+            {title: "", dataIndex: 'check', key: 'check'},
             {title: "矿机名称", dataIndex: 'name', key: 'name'},
             {title: "角色", dataIndex: 'role', key: 'role'},
             {title: <PPP/>, dataIndex: 'current', key: 'current'},
@@ -122,22 +146,22 @@ class TableDetail extends Component {
         ];
         const icon = <svg className="icon svg-icon" aria-hidden="true"
                           style={{width: "20px", height: "20px", marginRight: "10px",marginTop:"6px"}}>
-            <use xlinkHref={"#iconlist_icon_arrow_nor"}></use>
+            <use xlinkHref={"#iconlist_icon_arrow_nor"} />
         </svg>
 
         const dataSource = [
-            {key:1,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:2,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:3,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:4,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:5,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:6,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:7,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="1" />,key:1,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="2" />,key:2,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="3" />,key:3,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="4" />,key:4,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="5" />,key:5,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="6" />,key:6,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="7" />,key:7,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="8" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="9" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="10" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="11" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {check:<Checkbox value="12" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
         ]
 
         const screen = {
@@ -151,13 +175,15 @@ class TableDetail extends Component {
 
         return (
             <div className={"title-common"} style={{height: "auto", paddingLeft: "0px"}}>
-                <Table bordered pagination={true} dataSource={dataSource} columns={columns}/>
+                <Checkbox style={{position:"absolute",zIndex:"5",left:"17px",top:"6px"}} indeterminate={this.state.indeterminate} onChange={this.onCheckAllChange} checked={this.state.checkAll} />
+                <Checkbox.Group style={{ width: '100%' }} onChange={this.onChange} value={this.state.checkedList}>
+                    <Table bordered pagination={true} dataSource={dataSource} columns={columns}/>
+                </Checkbox.Group>
+                <input type={"button"} onClick={this.about} />
             </div>
         )
     }
 }
-
-
 
 // 右下方整体
 const BelowInfo = () => {

@@ -5,6 +5,8 @@ import intl from 'react-intl-universal';
 import LoginIndex from "./component/user/Login";
 import IndexIndex from "./component/index/Index";
 import PoolIndex from  "./component/pool/Index";
+import UpgradeIndex from  "./component/upgrade/Index";
+import UpgradeAdd from  "./component/upgrade/Add";
 
 const locales = {
     "en-US": require('./lang/en-US'),
@@ -45,6 +47,8 @@ export default class Basic extends Component {
                         <Route path="/userweb/login" component={LoginIndex}/>
                         <Route path="/index/index" component={IndexIndex}/>
                         <Route path="/poolweb/index" component={PoolIndex}/>
+                        <Route path="/upgradeweb/index" component={UpgradeIndex}/>
+                        <Route path="/upgradeweb/add" component={UpgradeAdd}/>
                         <Route path="/" component={LoginIndex}/>
                     </Switch>
                 </Router>

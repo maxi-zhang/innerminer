@@ -94,7 +94,7 @@ class OperatePanel extends Component {
     }
 }
 
-const PPP = () =>{
+const PPP = () => {
     return (
         <p>当前任务</p>
     )
@@ -103,11 +103,11 @@ const PPP = () =>{
 // 矿池表格区域整体
 class TableDetail extends Component {
     state = {
-        choose:3,
+        choose: 3,
         checkedList: [],
         indeterminate: true,
         checkAll: false,
-        plainOptions:['1', '2', '3','4', '5', '6','7', '8', '9','10', '11', '12'],
+        plainOptions: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
     };
 
     onChange = checkedList => {
@@ -118,7 +118,7 @@ class TableDetail extends Component {
         });
     };
 
-    about = () =>{
+    getCheckList = () => {
         console.log(this.state.checkedList);
     }
 
@@ -129,6 +129,7 @@ class TableDetail extends Component {
             checkAll: e.target.checked,
         });
     };
+
     render() {
         const columns = [
             {title: "", dataIndex: 'check', key: 'check'},
@@ -145,41 +146,210 @@ class TableDetail extends Component {
             {title: "详情", dataIndex: 'detail', key: 'detail'}
         ];
         const icon = <svg className="icon svg-icon" aria-hidden="true"
-                          style={{width: "20px", height: "20px", marginRight: "10px",marginTop:"6px"}}>
-            <use xlinkHref={"#iconlist_icon_arrow_nor"} />
+                          style={{width: "20px", height: "20px", marginRight: "10px", marginTop: "6px"}}>
+            <use xlinkHref={"#iconlist_icon_arrow_nor"}/>
         </svg>
 
         const dataSource = [
-            {check:<Checkbox value="1" />,key:1,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="2" />,key:2,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="3" />,key:3,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="4" />,key:4,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="5" />,key:5,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="6" />,key:6,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="7" />,key:7,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="8" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="9" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="10" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="11" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
-            {check:<Checkbox value="12" />,key:8,name:"ARS-001",role:"主矿工",current:12,wait:9,fail:3,p1:"10/24",p2:"2/4",room:"50/100",ip:"10.0.0.1",status:"在线",detail:icon},
+            {
+                check: <Checkbox value="1"/>,
+                key: 1,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="2"/>,
+                key: 2,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="3"/>,
+                key: 3,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="4"/>,
+                key: 4,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="5"/>,
+                key: 5,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="6"/>,
+                key: 6,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="7"/>,
+                key: 7,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="8"/>,
+                key: 8,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="9"/>,
+                key: 8,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="10"/>,
+                key: 8,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="11"/>,
+                key: 8,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
+            {
+                check: <Checkbox value="12"/>,
+                key: 8,
+                name: "ARS-001",
+                role: "主矿工",
+                current: 12,
+                wait: 9,
+                fail: 3,
+                p1: "10/24",
+                p2: "2/4",
+                room: "50/100",
+                ip: "10.0.0.1",
+                status: "在线",
+                detail: icon
+            },
         ]
 
         const screen = {
-            0:["key","name","role","current","wait","fail","p1","p2","room","ip","status","detail"],
-            1:["key","name","role","current","wait","fail","p1","p2","room","ip","status","detail"],
-            2:["key","name","role","current","wait","fail","p1","p2","room","ip","status","detail"],
-            3:["key","name","role","current","wait","fail","p1","p2","room","ip","status","detail"],
-            4:["key","name","role","current","wait","fail","p1","p2","room","ip","status","detail"],
-            5:["key","name","role","current","wait","fail","p1","p2","room","ip","status","detail"],
+            0: ["key", "name", "role", "current", "wait", "fail", "p1", "p2", "room", "ip", "status", "detail"],
+            1: ["key", "name", "role", "current", "wait", "fail", "p1", "p2", "room", "ip", "status", "detail"],
+            2: ["key", "name", "role", "current", "wait", "fail", "p1", "p2", "room", "ip", "status", "detail"],
+            3: ["key", "name", "role", "current", "wait", "fail", "p1", "p2", "room", "ip", "status", "detail"],
+            4: ["key", "name", "role", "current", "wait", "fail", "p1", "p2", "room", "ip", "status", "detail"],
+            5: ["key", "name", "role", "current", "wait", "fail", "p1", "p2", "room", "ip", "status", "detail"],
         }
 
         return (
             <div className={"title-common"} style={{height: "auto", paddingLeft: "0px"}}>
-                <Checkbox style={{position:"absolute",zIndex:"5",left:"17px",top:"6px"}} indeterminate={this.state.indeterminate} onChange={this.onCheckAllChange} checked={this.state.checkAll} />
-                <Checkbox.Group style={{ width: '100%' }} onChange={this.onChange} value={this.state.checkedList}>
+                <Checkbox style={{position: "absolute", zIndex: "5", left: "17px", top: "6px"}}
+                          indeterminate={this.state.indeterminate} onChange={this.onCheckAllChange}
+                          checked={this.state.checkAll}/>
+                <Checkbox.Group style={{width: '100%'}} onChange={this.onChange} value={this.state.checkedList}>
                     <Table bordered pagination={true} dataSource={dataSource} columns={columns}/>
                 </Checkbox.Group>
-                <input type={"button"} onClick={this.about} />
             </div>
         )
     }
